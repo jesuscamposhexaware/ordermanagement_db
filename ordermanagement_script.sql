@@ -20,12 +20,14 @@ USE `ordermanagement` ;
 DROP TABLE IF EXISTS `ordermanagement`.`User` ;
 
 CREATE TABLE IF NOT EXISTS `ordermanagement`.`User` (
-  `id_user` INT NOT NULL AUTO_INCREMENT,
+  `id_user` INT NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
   `name` VARCHAR(45) NOT NULL,
   `last_name` VARCHAR(45) NOT NULL,
   `age` INT NOT NULL,
   `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id_user`))
+  PRIMARY KEY (`id_user`),
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE)
 ENGINE = InnoDB;
 
 
@@ -106,8 +108,8 @@ CREATE TABLE IF NOT EXISTS `ordermanagement`.`OrderDetail` (
   `id_order` INT NOT NULL,
   `id_product` INT NOT NULL,
   `quantity` INT NOT NULL,
-  `sold_price` VARCHAR(45) NOT NULL,
-  `total` DECIMAL(9,2) NOT NULL,
+  `sold_price` DECIMAL(7,2) NOT NULL,
+  `subtotal` DECIMAL(9,2) NOT NULL,
   INDEX `fk_OrderDetail_Order1_idx` (`id_order` ASC) VISIBLE,
   INDEX `fk_OrderDetail_Product1_idx` (`id_product` ASC) VISIBLE,
   PRIMARY KEY (`id_order`, `id_product`),
