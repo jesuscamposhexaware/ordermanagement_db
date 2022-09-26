@@ -20,8 +20,10 @@ USE `ordermanagement` ;
 DROP TABLE IF EXISTS `ordermanagement`.`User` ;
 
 CREATE TABLE IF NOT EXISTS `ordermanagement`.`User` (
-  `id_user` INT NOT NULL,
+  `id_user` INT NOT NULL AUTO_INCREMENT,
   `email` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(200) NOT NULL,
+  `role` VARCHAR(45) NOT NULL,
   `name` VARCHAR(45) NOT NULL,
   `last_name` VARCHAR(45) NOT NULL,
   `age` INT NOT NULL,
@@ -60,7 +62,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `ordermanagement`.`Product` ;
 
 CREATE TABLE IF NOT EXISTS `ordermanagement`.`Product` (
-  `id_product` INT NOT NULL,
+  `id_product` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   `description` VARCHAR(100) NOT NULL,
   `price` DECIMAL(7,2) NOT NULL,
@@ -76,7 +78,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `ordermanagement`.`Order` ;
 
 CREATE TABLE IF NOT EXISTS `ordermanagement`.`Order` (
-  `id_order` INT NOT NULL,
+  `id_order` INT NOT NULL AUTO_INCREMENT,
   `user_id` INT NOT NULL,
   `status` VARCHAR(45) NOT NULL,
   `gift_message` VARCHAR(200) NULL,
