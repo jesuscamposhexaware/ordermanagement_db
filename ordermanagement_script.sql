@@ -79,9 +79,10 @@ DROP TABLE IF EXISTS `ordermanagement`.`Order` ;
 
 CREATE TABLE IF NOT EXISTS `ordermanagement`.`Order` (
   `id_order` INT NOT NULL AUTO_INCREMENT,
-  `user_id` INT NOT NULL,
+  `id_user` INT NOT NULL,
   `status` VARCHAR(45) NOT NULL,
-  `gift_message` VARCHAR(200) NULL,
+  `gift_message` BLOB NULL,
+  `gift_message_type` VARCHAR(45) NULL,
   `receiver_name` VARCHAR(45) NOT NULL,
   `total` DECIMAL(9,2) NOT NULL,
   `street_address` VARCHAR(90) NOT NULL,
@@ -89,12 +90,12 @@ CREATE TABLE IF NOT EXISTS `ordermanagement`.`Order` (
   `state` VARCHAR(45) NOT NULL,
   `country` VARCHAR(45) NOT NULL,
   `zip_code` INT NOT NULL,
-  `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_order`),
-  INDEX `fk_Order_User1_idx` (`user_id` ASC) VISIBLE,
+  INDEX `fk_Order_User1_idx` (`id_user` ASC) VISIBLE,
   CONSTRAINT `fk_Order_User1`
-    FOREIGN KEY (`user_id`)
+    FOREIGN KEY (`id_user`)
     REFERENCES `ordermanagement`.`User` (`id_user`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
