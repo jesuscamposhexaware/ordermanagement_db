@@ -1,0 +1,638 @@
+{
+	"info": {
+		"_postman_id": "fbeeae4b-584d-431b-b394-5f2b4e1d5cb9",
+		"name": "OrderManagement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Get orders by id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic amNhbXBvcy5qYzM4QGdtYWlsLmNvbTpwYXNzd29yZA==",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://jesuscamposordermanagementdev.us-east-1.elasticbeanstalk.com/order/1",
+							"protocol": "http",
+							"host": [
+								"jesuscamposordermanagementdev",
+								"us-east-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"order",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get orders by user",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic amNhbXBvcy5qYzM4QGdtYWlsLmNvbTpwYXNzd29yZA==",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://jesuscamposordermanagementdev.us-east-1.elasticbeanstalk.com/order/user/1",
+							"protocol": "http",
+							"host": [
+								"jesuscamposordermanagementdev",
+								"us-east-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"order",
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create order",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic amNhbXBvcy5qYzM4QGdtYWlsLmNvbTpwYXNzd29yZA==",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idUser\": 1,\r\n    \"total\": 3471.56,\r\n    \"receiverName\": \"Jesus Campos\",\r\n    \"streetAddress\": \"5785 PeachTree Dunwoody Rd\",\r\n    \"zipCode\": \"30342\",\r\n    \"city\": \"Atlanta\",\r\n    \"state\": \"GA\",\r\n    \"country\": \"Estados Unidos\",\r\n    \"giftMessage\": \"C:\\\\fakepath\\\\2.jpg\",\r\n    \"orderDetails\": [\r\n        {\r\n            \"idProduct\": 2,\r\n            \"name\": \"Product11\",\r\n            \"description\": \"This is the description for product 2\",\r\n            \"price\": 234.67,\r\n            \"stock\": 100,\r\n            \"picture\": \"https://picsum.photos/id/11/300/200\",\r\n            \"quantity\": 2,\r\n            \"subtotal\": 469.34\r\n        },\r\n        {\r\n            \"idProduct\": 1,\r\n            \"name\": \"Product1\",\r\n            \"description\": \"This is the description for product 1\",\r\n            \"price\": 564.22,\r\n            \"stock\": 10,\r\n            \"picture\": \"https://picsum.photos/id/1/300/200\",\r\n            \"quantity\": 3,\r\n            \"subtotal\": 1692.66\r\n        },\r\n        {\r\n            \"idProduct\": 3,\r\n            \"name\": \"Product2\",\r\n            \"description\": \"This is the description for product 3\",\r\n            \"price\": 654.78,\r\n            \"stock\": 20,\r\n            \"picture\": \"https://picsum.photos/id/2/300/200\",\r\n            \"quantity\": 2,\r\n            \"subtotal\": 1309.56\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://jesuscamposordermanagementdev.us-east-1.elasticbeanstalk.com/order",
+							"protocol": "http",
+							"host": [
+								"jesuscamposordermanagementdev",
+								"us-east-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create order - input validation",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic amNhbXBvcy5qYzM4QGdtYWlsLmNvbTpwYXNzd29yZA==",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idUser\": null,\r\n    \"total\": null,\r\n    \"receiverName\": \"Jesus Campos\",\r\n    \"streetAddress\": \"5785 PeachTree Dunwoody Rd\",\r\n    \"zipCode\": null,\r\n    \"city\": \"Atlanta\",\r\n    \"state\": \"GA\",\r\n    \"country\": \"Estados Unidos\",\r\n    \"giftMessage\": \"C:\\\\fakepath\\\\2.jpg\",\r\n    \"orderDetails\": [\r\n        {\r\n            \"idProduct\": null,\r\n            \"name\": \"Product11\",\r\n            \"description\": \"This is the description for product 2\",\r\n            \"price\": 234.67,\r\n            \"stock\": 100,\r\n            \"picture\": \"https://picsum.photos/id/11/300/200\",\r\n            \"quantity\": 2,\r\n            \"subtotal\": 469.34\r\n        },\r\n        {\r\n            \"idProduct\": 1,\r\n            \"name\": \"Product1\",\r\n            \"description\": \"This is the description for product 1\",\r\n            \"price\": 564.22,\r\n            \"stock\": 10,\r\n            \"picture\": \"https://picsum.photos/id/1/300/200\",\r\n            \"quantity\": null,\r\n            \"subtotal\": 1692.66\r\n        },\r\n        {\r\n            \"idProduct\": 3,\r\n            \"name\": \"Product2\",\r\n            \"description\": \"This is the description for product 3\",\r\n            \"price\": 654.78,\r\n            \"stock\": 20,\r\n            \"picture\": \"https://picsum.photos/id/2/300/200\",\r\n            \"quantity\": 2,\r\n            \"subtotal\": 1309.56\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://jesuscamposordermanagementdev.us-east-1.elasticbeanstalk.com/order",
+							"protocol": "http",
+							"host": [
+								"jesuscamposordermanagementdev",
+								"us-east-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create order - user does not exist",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic amNhbXBvcy5qYzM4QGdtYWlsLmNvbTpwYXNzd29yZA==",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idUser\": 1000,\r\n    \"total\": 3471.56,\r\n    \"receiverName\": \"Jesus Campos\",\r\n    \"streetAddress\": \"5785 PeachTree Dunwoody Rd\",\r\n    \"zipCode\": \"30342\",\r\n    \"city\": \"Atlanta\",\r\n    \"state\": \"GA\",\r\n    \"country\": \"Estados Unidos\",\r\n    \"giftMessage\": \"C:\\\\fakepath\\\\2.jpg\",\r\n    \"orderDetails\": [\r\n        {\r\n            \"idProduct\": 2,\r\n            \"name\": \"Product11\",\r\n            \"description\": \"This is the description for product 2\",\r\n            \"price\": 234.67,\r\n            \"stock\": 100,\r\n            \"picture\": \"https://picsum.photos/id/11/300/200\",\r\n            \"quantity\": 2,\r\n            \"subtotal\": 469.34\r\n        },\r\n        {\r\n            \"idProduct\": 1,\r\n            \"name\": \"Product1\",\r\n            \"description\": \"This is the description for product 1\",\r\n            \"price\": 564.22,\r\n            \"stock\": 10,\r\n            \"picture\": \"https://picsum.photos/id/1/300/200\",\r\n            \"quantity\": 3,\r\n            \"subtotal\": 1692.66\r\n        },\r\n        {\r\n            \"idProduct\": 3,\r\n            \"name\": \"Product2\",\r\n            \"description\": \"This is the description for product 3\",\r\n            \"price\": 654.78,\r\n            \"stock\": 20,\r\n            \"picture\": \"https://picsum.photos/id/2/300/200\",\r\n            \"quantity\": 2,\r\n            \"subtotal\": 1309.56\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create order - product does not exist",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic amNhbXBvcy5qYzM4QGdtYWlsLmNvbTpwYXNzd29yZA==",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idUser\": 1,\r\n    \"total\": 3471.56,\r\n    \"receiverName\": \"Jesus Campos\",\r\n    \"streetAddress\": \"5785 PeachTree Dunwoody Rd\",\r\n    \"zipCode\": \"30342\",\r\n    \"city\": \"Atlanta\",\r\n    \"state\": \"GA\",\r\n    \"country\": \"Estados Unidos\",\r\n    \"giftMessage\": \"C:\\\\fakepath\\\\2.jpg\",\r\n    \"orderDetails\": [\r\n        {\r\n            \"idProduct\": 200,\r\n            \"name\": \"Product11\",\r\n            \"description\": \"This is the description for product 2\",\r\n            \"price\": 234.67,\r\n            \"stock\": 100,\r\n            \"picture\": \"https://picsum.photos/id/11/300/200\",\r\n            \"quantity\": 2,\r\n            \"subtotal\": 469.34\r\n        },\r\n        {\r\n            \"idProduct\": 1,\r\n            \"name\": \"Product1\",\r\n            \"description\": \"This is the description for product 1\",\r\n            \"price\": 564.22,\r\n            \"stock\": 10,\r\n            \"picture\": \"https://picsum.photos/id/1/300/200\",\r\n            \"quantity\": 3,\r\n            \"subtotal\": 1692.66\r\n        },\r\n        {\r\n            \"idProduct\": 3,\r\n            \"name\": \"Product2\",\r\n            \"description\": \"This is the description for product 3\",\r\n            \"price\": 654.78,\r\n            \"stock\": 20,\r\n            \"picture\": \"https://picsum.photos/id/2/300/200\",\r\n            \"quantity\": 2,\r\n            \"subtotal\": 1309.56\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create order - stock is not enough",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic amNhbXBvcy5qYzM4QGdtYWlsLmNvbTpwYXNzd29yZA==",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idUser\": 1,\r\n    \"total\": 3471.56,\r\n    \"receiverName\": \"Jesus Campos\",\r\n    \"streetAddress\": \"5785 PeachTree Dunwoody Rd\",\r\n    \"zipCode\": \"30342\",\r\n    \"city\": \"Atlanta\",\r\n    \"state\": \"GA\",\r\n    \"country\": \"Estados Unidos\",\r\n    \"giftMessage\": \"C:\\\\fakepath\\\\2.jpg\",\r\n    \"orderDetails\": [\r\n        {\r\n            \"idProduct\": 2,\r\n            \"name\": \"Product11\",\r\n            \"description\": \"This is the description for product 2\",\r\n            \"price\": 234.67,\r\n            \"stock\": 200,\r\n            \"picture\": \"https://picsum.photos/id/11/300/200\",\r\n            \"quantity\": 2,\r\n            \"subtotal\": 469.34\r\n        },\r\n        {\r\n            \"idProduct\": 1,\r\n            \"name\": \"Product1\",\r\n            \"description\": \"This is the description for product 1\",\r\n            \"price\": 564.22,\r\n            \"stock\": 10,\r\n            \"picture\": \"https://picsum.photos/id/1/300/200\",\r\n            \"quantity\": 3,\r\n            \"subtotal\": 1692.66\r\n        },\r\n        {\r\n            \"idProduct\": 3,\r\n            \"name\": \"Product2\",\r\n            \"description\": \"This is the description for product 3\",\r\n            \"price\": 654.78,\r\n            \"stock\": 20,\r\n            \"picture\": \"https://picsum.photos/id/2/300/200\",\r\n            \"quantity\": 2,\r\n            \"subtotal\": 1309.56\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://jesuscamposordermanagementdev.us-east-1.elasticbeanstalk.com/order",
+							"protocol": "http",
+							"host": [
+								"jesuscamposordermanagementdev",
+								"us-east-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create order - duplicated product",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic amNhbXBvcy5qYzM4QGdtYWlsLmNvbTpwYXNzd29yZA==",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idUser\": 1,\r\n    \"total\": 3471.56,\r\n    \"receiverName\": \"Jesus Campos\",\r\n    \"streetAddress\": \"5785 PeachTree Dunwoody Rd\",\r\n    \"zipCode\": \"30342\",\r\n    \"city\": \"Atlanta\",\r\n    \"state\": \"GA\",\r\n    \"country\": \"Estados Unidos\",\r\n    \"giftMessage\": \"C:\\\\fakepath\\\\2.jpg\",\r\n    \"orderDetails\": [\r\n        {\r\n            \"idProduct\": 2,\r\n            \"name\": \"Product11\",\r\n            \"description\": \"This is the description for product 2\",\r\n            \"price\": 234.67,\r\n            \"stock\": 100,\r\n            \"picture\": \"https://picsum.photos/id/11/300/200\",\r\n            \"quantity\": 20,\r\n            \"subtotal\": 469.34\r\n        },\r\n        {\r\n            \"idProduct\": 2,\r\n            \"name\": \"Product1\",\r\n            \"description\": \"This is the description for product 1\",\r\n            \"price\": 564.22,\r\n            \"stock\": 10,\r\n            \"picture\": \"https://picsum.photos/id/1/300/200\",\r\n            \"quantity\": 3,\r\n            \"subtotal\": 1692.66\r\n        },\r\n        {\r\n            \"idProduct\": 3,\r\n            \"name\": \"Product2\",\r\n            \"description\": \"This is the description for product 3\",\r\n            \"price\": 654.78,\r\n            \"stock\": 20,\r\n            \"picture\": \"https://picsum.photos/id/2/300/200\",\r\n            \"quantity\": 2,\r\n            \"subtotal\": 1309.56\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update order",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic amNhbXBvcy5qYzM4QGdtYWlsLmNvbTpwYXNzd29yZA==",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idUser\": 1,\r\n    \"total\": 3471.56,\r\n    \"receiverName\": \"Jesus Campos\",\r\n    \"streetAddress\": \"5785 PeachTree Dunwoody Rd\",\r\n    \"zipCode\": \"30342\",\r\n    \"city\": \"Atlanta\",\r\n    \"status\": \"IN PROGRESS\",\r\n    \"state\": \"GA\",\r\n    \"country\": \"Estados Unidos\",\r\n    \"giftMessage\": \"C:\\\\fakepath\\\\2.jpg\",\r\n    \"orderDetails\": [\r\n        {\r\n            \"idProduct\": 2,\r\n            \"name\": \"Product11\",\r\n            \"description\": \"This is the description for product 2\",\r\n            \"price\": 234.67,\r\n            \"stock\": 100,\r\n            \"picture\": \"https://picsum.photos/id/11/300/200\",\r\n            \"quantity\": 2,\r\n            \"subtotal\": 469.34\r\n        },\r\n        {\r\n            \"idProduct\": 3,\r\n            \"name\": \"Product2\",\r\n            \"description\": \"This is the description for product 3\",\r\n            \"price\": 654.78,\r\n            \"stock\": 20,\r\n            \"picture\": \"https://picsum.photos/id/2/300/200\",\r\n            \"quantity\": 2,\r\n            \"subtotal\": 1309.56\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/order/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"order",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update order - order does not exist",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic amNhbXBvcy5qYzM4QGdtYWlsLmNvbTpwYXNzd29yZA==",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idUser\": 1,\r\n    \"total\": 3471.56,\r\n    \"receiverName\": \"Jesus Campos\",\r\n    \"streetAddress\": \"5785 PeachTree Dunwoody Rd\",\r\n    \"zipCode\": \"30342\",\r\n    \"city\": \"Atlanta\",\r\n    \"status\": \"IN PROGRESS\",\r\n    \"state\": \"GA\",\r\n    \"country\": \"Estados Unidos\",\r\n    \"giftMessage\": \"C:\\\\fakepath\\\\2.jpg\",\r\n    \"orderDetails\": [\r\n        {\r\n            \"idProduct\": 2,\r\n            \"name\": \"Product11\",\r\n            \"description\": \"This is the description for product 2\",\r\n            \"price\": 234.67,\r\n            \"stock\": 100,\r\n            \"picture\": \"https://picsum.photos/id/11/300/200\",\r\n            \"quantity\": 2,\r\n            \"subtotal\": 469.34\r\n        },\r\n        {\r\n            \"idProduct\": 3,\r\n            \"name\": \"Product2\",\r\n            \"description\": \"This is the description for product 3\",\r\n            \"price\": 654.78,\r\n            \"stock\": 20,\r\n            \"picture\": \"https://picsum.photos/id/2/300/200\",\r\n            \"quantity\": 2,\r\n            \"subtotal\": 1309.56\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/order/100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"order",
+								"100"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete order",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic amNhbXBvcy5qYzM4QGdtYWlsLmNvbTpwYXNzd29yZA==",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://jesuscamposordermanagementdev.us-east-1.elasticbeanstalk.com/100",
+							"protocol": "http",
+							"host": [
+								"jesuscamposordermanagementdev",
+								"us-east-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"100"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete order - order does not exist",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic amNhbXBvcy5qYzM4QGdtYWlsLmNvbTpwYXNzd29yZA==",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://jesuscamposordermanagementdev.us-east-1.elasticbeanstalk.com/order/1",
+							"protocol": "http",
+							"host": [
+								"jesuscamposordermanagementdev",
+								"us-east-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"order",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get all users",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic amNhbXBvcy5qYzM4QGdtYWlsLmNvbTpwYXNzd29yZA==",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://jesuscamposordermanagementdev.us-east-1.elasticbeanstalk.com/user",
+							"protocol": "http",
+							"host": [
+								"jesuscamposordermanagementdev",
+								"us-east-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all users by id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic amNhbXBvcy5qYzM4QGdtYWlsLmNvbTpwYXNzd29yZA==",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://jesuscamposordermanagementdev.us-east-1.elasticbeanstalk.com/user/1",
+							"protocol": "http",
+							"host": [
+								"jesuscamposordermanagementdev",
+								"us-east-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all users by email",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic amNhbXBvcy5qYzM4QGdtYWlsLmNvbTpwYXNzd29yZA==",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://jesuscamposordermanagementdev.us-east-1.elasticbeanstalk.com/user/email/jcampos.jc38@gmail.com",
+							"protocol": "http",
+							"host": [
+								"jesuscamposordermanagementdev",
+								"us-east-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"user",
+								"email",
+								"jcampos.jc38@gmail.com"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Get all products",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic amNhbXBvcy5qYzM4QGdtYWlsLmNvbTpwYXNzd29yZA==",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://jesuscamposordermanagementdev.us-east-1.elasticbeanstalk.com/product",
+							"protocol": "http",
+							"host": [
+								"jesuscamposordermanagementdev",
+								"us-east-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get product by id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic amNhbXBvcy5qYzM4QGdtYWlsLmNvbTpwYXNzd29yZA==",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://jesuscamposordermanagementdev.us-east-1.elasticbeanstalk.com/product/100",
+							"protocol": "http",
+							"host": [
+								"jesuscamposordermanagementdev",
+								"us-east-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"product",
+								"100"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get product by id - not found",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic amNhbXBvcy5qYzM4QGdtYWlsLmNvbTpwYXNzd29yZA==",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://jesuscamposordermanagementdev.us-east-1.elasticbeanstalk.com/order/user/1",
+							"protocol": "http",
+							"host": [
+								"jesuscamposordermanagementdev",
+								"us-east-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"order",
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

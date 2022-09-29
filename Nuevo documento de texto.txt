@@ -1,0 +1,9 @@
+{
+    "cred": "amNhbXBvcy5qYzM4QGdtYWlsLmNvbTpwYXNzd29yZA==",
+    "idUser": 1,
+    "email": "jcampos.jc38@gmail.com",
+    "role": "USER,ADMIN",
+    "name": "Jesus",
+    "lastName": "Campos",
+    "age": 27
+}
